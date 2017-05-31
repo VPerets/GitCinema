@@ -33,6 +33,7 @@ namespace TestWCF
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
+            Console.WriteLine("Some text for commiting");
         }
     }
 }
