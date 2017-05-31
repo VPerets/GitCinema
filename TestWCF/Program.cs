@@ -34,10 +34,13 @@ namespace TestWCF
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             Console.WriteLine("Some text for commiting");
+
             Console.WriteLine("Some more text for commiting from local repo and pull with github");
 
             Console.WriteLine(service.ReserveTickets(1,1, new DateTime(2017, 05, 31, 18, 00, 00), 
                 new Point {x = 8, y = 9 }, "perets-vs@ukr.net").ToString());
+
+            Console.WriteLine("Some more text for check commit from gitHub");
 
         }
     }
