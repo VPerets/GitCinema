@@ -91,9 +91,13 @@ namespace WcfCinema
 
             if (soldTickets.Count() == 0)
             {
+                var IdCustomer = (datacontext.GetTable<Customers>()
+                    .Where(c => c.EMail == mail)
+                    .Select(c => c.ID)).First();
+
                 var order = new Orders
                 {
-                    Customer =1,
+                    Customer = IdCustomer,
                     SessionId = session.First().ID
                 };
                 datacontext.GetTable<Orders>().InsertOnSubmit(order);
