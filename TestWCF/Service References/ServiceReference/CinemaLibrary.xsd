@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CinemaLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CinemaLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SoldTickets">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Line" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Orders" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:int" />
+      <xs:element minOccurs="0" name="Seat" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoldTickets" nillable="true" type="tns:SoldTickets" />
+  <xs:complexType name="Orders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Customer" type="xs:int" />
+      <xs:element minOccurs="0" name="Customer1" nillable="true" type="tns:Customers" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MovieSession" nillable="true" type="tns:MovieSessions" />
+      <xs:element minOccurs="0" name="SessionId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Orders" nillable="true" type="tns:Orders" />
+  <xs:complexType name="Customers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customers" nillable="true" type="tns:Customers" />
+  <xs:complexType name="MovieSessions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Hall" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Movie" type="xs:int" />
+      <xs:element minOccurs="0" name="SessionDateTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MovieSessions" nillable="true" type="tns:MovieSessions" />
+</xs:schema>
